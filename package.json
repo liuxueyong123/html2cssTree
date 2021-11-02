@@ -2,7 +2,7 @@
 	"name": "html2csstree",
 	"displayName": "html2csstree",
 	"description": "一款vscode 插件，用于对选中的html进行语法解析，将生成的css class树复制到剪贴板，省去手动写css class的困扰",
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
