@@ -11,6 +11,7 @@
 # 快捷键
 
 mac: `command + 2`
+
 windows: `ctrl + 2`
 
 如有冲突，用户可自定义快捷键
