@@ -1,8 +1,8 @@
 {
 	"name": "html2csstree",
 	"displayName": "html2csstree",
-	"description": "",
-	"version": "0.0.2",
+	"description": "一款vscode 插件，用于对选中的html进行语法解析，将生成的css class树复制到剪贴板，省去手动写css class的困扰",
+	"version": "0.0.3",
 	"publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -12,8 +12,12 @@
 	"icon": "assets/images/icon.png",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/liuxueyong123/html2cssTree"
+		"url": "https://github.com/liuxueyong123/html2cssTree.git"
 	},
+	"bugs": {
+		"url": "https://github.com/liuxueyong123/html2cssTree/issues/new"
+	},
+	"homepage": "https://github.com/liuxueyong123/html2cssTree",
 	"keywords": [
 		"html parse",
 		"css class tree"
