@@ -4,6 +4,19 @@
 	"description": "",
 	"version": "0.0.1",
 	"publisher": "liuxueyong123",
+	"author": {
+		"name": "liuxueyong123",
+		"email": "liuxueyong123@126.com",
+		"url": "https://github.com/liuxueyong123"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/liuxueyong123/html2cssTree"
+	},
+	"keywords": [
+		"html parse",
+		"css class tree"
+	],
 	"engines": {
 		"vscode": "^1.61.0"
 	},
