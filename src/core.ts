@@ -291,44 +291,33 @@ export class ParseHtml {
   }
 }
 
-export const getClassTreeFromAST = (astObj: NodeAST) => {
-  let result = '';
+const assertClassExist = (astObj: NodeAST) => {
   if(astObj.attribute && astObj.attribute.class) {
+   return true;
+  }
+
+  return false;
+};
+
+export const getClassTreeFromAST = (astObj: NodeAST, currentLevel = 1) => {
+  let result = '';
+  if(assertClassExist(astObj)) {
     result += `.${astObj.attribute.class} {`;
   }
 
+  let haveChildClass = false;
   if(astObj.children) {
     for(const child of astObj.children) {
-      result += getClassTreeFromAST(child);
+      if(!assertClassExist(child)) {continue;}
+      haveChildClass = true;
+      result += `\r\n${'\t'.repeat(currentLevel)}`;
+      result += getClassTreeFromAST(child, currentLevel + 1);
     }
   }
 
   if(astObj.attribute && astObj.attribute.class) {
-    result += '}';
+    result += `${haveChildClass ? `\r\n${'\t'.repeat(currentLevel - 1)}` : ''}}`;
   }
 
   return result;
 };
-
-
-const html = `
-  <div class="parent">
-    <div class="child-1">
-      <div class="child-child-1">11</div>
-      <span>22</span>
-    </div>
-    <img src="123" class="img" />
-    <span class="child-2">123</span>
-  </div>
-`;
-
-const parseHtml = new ParseHtml(html);
-const astObj = parseHtml.parse();
-
-if(astObj) {
-  console.log('astObj', astObj);
-  console.log('classTree', getClassTreeFromAST(astObj));  
-}
-
-
-
