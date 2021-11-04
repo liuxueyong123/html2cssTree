@@ -238,8 +238,11 @@ export class ParseHtml {
         this.status = TAG_START;
       }
     } else {
-      console.log(this.currentNode);
-      this.currentNode.text += s;
+      // TODO
+      // this.currentNode.text += s;
+      if(this.currentNode) {
+        this.currentNode.text += s;
+      }
     }
   }
 
