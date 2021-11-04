@@ -82,7 +82,7 @@ export class ParseHtml {
 
   // 预处理
   preHandle() {
-    this.html = this.html.replace(/\n[ ]+/g, '');
+    this.html = this.html.replace(/\n[ ]+/g, ' ');
     this.html = this.html.replace(/\n/g, '');
     this.html = this.html.replace(/[ ]+/g, ' ');
     this.html = this.html.replace(/<[\s]+/g, '<');
@@ -156,6 +156,7 @@ export class ParseHtml {
       }
       this.tagStack.push(this.currentNode);
     };
+
     if (this.$reg.isLetter(s)) {
       // 标签名
       this.tagName += s;
@@ -321,3 +322,34 @@ export const getClassTreeFromAST = (astObj: NodeAST, currentLevel = 1) => {
 
   return result;
 };
+
+const html = `
+  <my-button class="parent">
+    <div class="child-1">
+      <div class="child-1-1">
+        <img />
+        <div class111="child-1-1-2"></div>
+      </div>
+      <span class="child-1-2">22</span>
+    </div>
+    <img src="" class="img" />
+    <span class="child-2">123</span>
+  </my-button>
+`;
+
+const html2 = `
+<div class="edit-text-card" v-show="isEditText">
+  <van-uploader
+    class="img-upload"
+    v-model="uploadImgListRef"
+  ></van-uploader>
+</div>
+`;
+
+const parseHtml = new ParseHtml(html2);
+const astObj = parseHtml.parse();
+
+if(astObj) {
+  console.log('astObj', astObj);
+  console.log(getClassTreeFromAST(astObj, 1));
+}
