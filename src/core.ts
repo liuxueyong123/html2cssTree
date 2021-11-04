@@ -238,6 +238,7 @@ export class ParseHtml {
         this.status = TAG_START;
       }
     } else {
+      console.log(this.currentNode);
       this.currentNode.text += s;
     }
   }
@@ -292,8 +293,22 @@ export class ParseHtml {
   }
 }
 
+const preHandleAST = (astObj: NodeAST) => {
+  if(!astObj.children) {
+    astObj.children = [];
+  }
+
+  if(!astObj.attribute) {
+    astObj.attribute = {};
+  }
+
+  for(const child of astObj.children) {
+    preHandleAST(child);
+  }
+};
+
 const assertClassExist = (astObj: NodeAST) => {
-  if(astObj.attribute && astObj.attribute.class) {
+  if(astObj.attribute.class) {
    return true;
   }
 
@@ -301,55 +316,32 @@ const assertClassExist = (astObj: NodeAST) => {
 };
 
 export const getClassTreeFromAST = (astObj: NodeAST, currentLevel = 1) => {
+  preHandleAST(astObj);
+
   let result = '';
   if(assertClassExist(astObj)) {
     result += `.${astObj.attribute.class} {`;
   }
 
-  let haveChildClass = false;
-  if(astObj.children) {
-    for(const child of astObj.children) {
-      if(!assertClassExist(child)) {continue;}
-      haveChildClass = true;
-      result += `\r\n${'\t'.repeat(currentLevel)}`;
-      result += getClassTreeFromAST(child, currentLevel + 1);
-    }
+  if(currentLevel === 1 && !assertClassExist(astObj)) {
+    currentLevel = 0;
   }
 
-  if(astObj.attribute && astObj.attribute.class) {
+  let haveChildClass = false;
+  for(let i = 0; i < astObj.children.length; i++) {
+    if(!assertClassExist(astObj.children[i])) {
+      // 对于没有 class 的节点，直接将其子元素提升为和该节点同级元素
+      astObj.children.splice(i+1, 0, ...astObj.children[i].children);
+      continue;
+    }
+    haveChildClass = true;
+    result += `\r\n${'\t'.repeat(currentLevel)}`;
+    result += getClassTreeFromAST(astObj.children[i], currentLevel + 1);
+  }
+
+  if(assertClassExist(astObj)) {
     result += `${haveChildClass ? `\r\n${'\t'.repeat(currentLevel - 1)}` : ''}}`;
   }
 
   return result;
 };
-
-const html = `
-  <my-button class="parent">
-    <div class="child-1">
-      <div class="child-1-1">
-        <img />
-        <div class111="child-1-1-2"></div>
-      </div>
-      <span class="child-1-2">22</span>
-    </div>
-    <img src="" class="img" />
-    <span class="child-2">123</span>
-  </my-button>
-`;
-
-const html2 = `
-<div class="edit-text-card" v-show="isEditText">
-  <van-uploader
-    class="img-upload"
-    v-model="uploadImgListRef"
-  ></van-uploader>
-</div>
-`;
-
-const parseHtml = new ParseHtml(html2);
-const astObj = parseHtml.parse();
-
-if(astObj) {
-  console.log('astObj', astObj);
-  console.log(getClassTreeFromAST(astObj, 1));
-}

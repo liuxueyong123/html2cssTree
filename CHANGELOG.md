@@ -1,9 +1,7 @@
 # Change Log
 
-All notable changes to the "html-class2css-tree" extension will be documented in this file.
+## [0.1.2] - 2021-11-04
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+### Added
 
-## [Unreleased]
-
-- Initial release
+- 给生成的 css tree 增加换行和 tab

@@ -35,8 +35,22 @@ windows: `ctrl + 2`
 结果：
 
 ```
-  .parent {.child-1 {.child-child-1 {}.child-child-2 {}}.child-2 {}}
+.parent {
+  .child-1 {
+    .child-child-1 {}
+    .child-child-2 {}
+  }
+  .child-2 {}
+}
 ```
+
+## TODO List
+
+- 全局错误处理
+- 测试用例补充
+- CHANGELOG 补充
+- [部分情况下存在解析错误](https://github.com/liuxueyong123/html2cssTree/issues/3)
+- [解析 html 为 AST 过程研究优化](https://github.com/liuxueyong123/html2cssTree/issues/1)
 
 # English
 
@@ -77,5 +91,11 @@ Example:
 Result：
 
 ```
-  .parent {.child-1 {.child-child-1 {}.child-child-2 {}}.child-2 {}}
+.parent {
+  .child-1 {
+    .child-child-1 {}
+    .child-child-2 {}
+  }
+  .child-2 {}
+}
 ```
