@@ -49,6 +49,9 @@ windows: `ctrl + 2`
 - 全局错误处理
 - 测试用例补充
 - CHANGELOG 补充
+- readme 中英文切换
+- readme 录制 usage 视频
+- 支持右键菜单转换 css
 - [部分情况下存在解析错误](https://github.com/liuxueyong123/html2cssTree/issues/3)
 - [解析 html 为 AST 过程研究优化](https://github.com/liuxueyong123/html2cssTree/issues/1)
 
