@@ -23,11 +23,11 @@ windows: `ctrl + 2`
 
 ## 功能
 
-选中需要解析的一段 html 后，按下快捷键即可将生成的 css tree 复制到剪贴板以供使用
+选中需要解析的一段 html 后，按下快捷键（或右键菜单选择html2css）即可将生成的 css tree 复制到剪贴板以供使用
 
 例：
 
-```
+``` html
 <div class="parent">
   <div class="child-1">
     <div class="child-child-1"></div>
@@ -39,7 +39,7 @@ windows: `ctrl + 2`
 
 结果：
 
-```
+``` css
 .parent {
   .child-1 {
     .child-child-1 {}
@@ -60,6 +60,6 @@ MIT © Richard McRichface
 - CHANGELOG 补充 ✅
 - readme 中英文切换 ✅
 - readme 录制 usage 视频
-- 支持右键菜单转换 css
+- 支持右键菜单转换 css ✅
 - [部分情况下存在解析错误](https://github.com/liuxueyong123/html2cssTree/issues/3)
 - [解析 html 为 AST 过程研究优化](https://github.com/liuxueyong123/html2cssTree/issues/1)

@@ -2,7 +2,7 @@
 	"name": "html2csstree",
 	"displayName": "html2csstree",
 	"description": "Parse the selected HTML and copying the generated CSS class tree to the clipboard, eliminating the trouble of writing CSS classes manually",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -46,7 +46,16 @@
 				"mac": "cmd+2",
 				"when": "editorTextFocus"
 			}
-		]
+		],
+		"menus": {
+      "editor/context": [
+        {
+          "command": "html2csstree.html2css",
+          "group": "1_modification",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run package",

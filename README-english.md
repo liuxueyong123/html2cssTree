@@ -23,11 +23,11 @@ In case of conflict, users can customize shortcut keys
 
 ## Usage
 
-After selecting a section of HTML to be parsed, press the shortcut key to copy the generated CSS tree to the clipboard for use
+After selecting a section of HTML to be parsed, press the shortcut key(or select html2css from the right-click menu) to copy the generated CSS tree to the clipboard for use
 
 Example:
 
-```
+``` html
 <div class="parent">
   <div class="child-1">
     <div class="child-child-1"></div>
@@ -39,7 +39,7 @@ Example:
 
 Result：
 
-```
+``` css
 .parent {
   .child-1 {
     .child-child-1 {}
