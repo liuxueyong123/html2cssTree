@@ -1,4 +1,4 @@
-中文 ｜ [English](https://github.com/liuxueyong123/html2cssTree/README-english.md)
+中文 ｜ [English](https://github.com/liuxueyong123/html2cssTree/blob/master/README-english.md)
 
 ## html2csstree
 
