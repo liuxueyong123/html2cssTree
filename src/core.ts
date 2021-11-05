@@ -296,7 +296,7 @@ export class ParseHtml {
   }
 }
 
-const preHandleAST = (astObj: NodeAST) => {
+const astPreHandle = (astObj: NodeAST) => {
   if(!astObj.children) {
     astObj.children = [];
   }
@@ -306,7 +306,7 @@ const preHandleAST = (astObj: NodeAST) => {
   }
 
   for(const child of astObj.children) {
-    preHandleAST(child);
+    astPreHandle(child);
   }
 };
 
@@ -319,7 +319,7 @@ const assertClassExist = (astObj: NodeAST) => {
 };
 
 export const getClassTreeFromAST = (astObj: NodeAST, currentLevel = 1) => {
-  preHandleAST(astObj);
+  astPreHandle(astObj);
 
   let result = '';
   if(assertClassExist(astObj)) {
