@@ -252,7 +252,7 @@ export class ParseHtml {
       // if (s !== '>' && s !== '/') {
       this.tagName += s;
     } else if(this.$reg.isEmpty(s)) {
-      throw new Error('解析闭合标签失败: ' + this.tagName);
+      throw new Error('Failed to resolve closed label: ' + this.tagName);
     }
 
     if (next === '>') {
@@ -272,7 +272,7 @@ export class ParseHtml {
         this.tagName = '';
         this.status = OPEN_TAG;
       } else {
-        throw new Error('标签不能闭合: ' + this.tagName);
+        throw new Error('Label cannot be closed: ' + this.tagName);
       }
     }
 

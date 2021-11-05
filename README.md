@@ -55,7 +55,7 @@ MIT © Richard McRichface
 
 ## TODO List
 
-- 全局错误处理
+- 全局错误处理 ✅
 - 测试用例补充
 - CHANGELOG 补充
 - readme 中英文切换 ✅

@@ -4,4 +4,10 @@
 
 ### Added
 
-- 给生成的 css tree 增加换行和 tab
+- Add line breaks and tabs to the generated CSS tree
+
+## [0.2.2] - 2021-11-05
+
+### Added
+
+- Add global error handling

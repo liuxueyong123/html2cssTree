@@ -10,16 +10,23 @@ export function activate(context: vscode.ExtensionContext) {
 		allSelections.forEach(async selection => {
 			const text = editor.document.getText(selection);
 			const parseHtml = new ParseHtml(text);
-			const astObj = parseHtml.parse();
+	
+			try {
+				const astObj = parseHtml.parse();
 
-			if(!astObj) {
-				vscode.window.showErrorMessage('Full HTML not recognized');
+				if(!astObj) {
+					vscode.window.showErrorMessage("Can't find HTML");
+					return;
+				}
+	
+				const cssTree = getClassTreeFromAST(astObj);
+				await vscode.env.clipboard.writeText(cssTree);
+				vscode.window.showInformationMessage('CSS tree copied successfully');
+			} catch(e: any) {
+				vscode.window.showErrorMessage(e.message);
 				return;
 			}
 
-			const cssTree = getClassTreeFromAST(astObj);
-			await vscode.env.clipboard.writeText(cssTree);
-			vscode.window.showInformationMessage('CSS tree copied successfully');
 		});
 	});
 
