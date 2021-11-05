@@ -2,8 +2,8 @@
 
 # html2csstree
 
-[![Build Status](./assets/badges/badge-lines.svg)](./assets/badges/badge-lines.svg)
-[![Build Status](./assets/badges/badge-branches.svg)](./assets/badges/badge-branches.svg)
+[![Build Status](./assets/badges/badge-lines.svg.png)](./assets/badges/badge-lines.svg.png)
+[![Build Status](./assets/badges/badge-branches.svg.png)](./assets/badges/badge-branches.svg.png)
 
 A vscode plug-in for parsing the selected HTML and copying the generated CSS class tree to the clipboard, eliminating the trouble of writing CSS classes manually
 

@@ -2,8 +2,8 @@
 
 ## html2csstree
 
-[![Build Status](./assets/badges/badge-lines.svg)](./assets/badges/badge-lines.svg)
-[![Build Status](./assets/badges/badge-branches.svg)](./assets/badges/badge-branches.svg)
+[![Build Status](./assets/badges/badge-lines.svg.png)](./assets/badges/badge-lines.svg.png)
+[![Build Status](./assets/badges/badge-branches.svg.png)](./assets/badges/badge-branches.svg.png)
 
 一款 vscode 插件，用于对选中的 html 进行语法解析，将生成的 css class 树复制到剪贴板，省去手动写 css class 的困扰
 

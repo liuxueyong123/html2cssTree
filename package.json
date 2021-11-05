@@ -54,7 +54,7 @@
 		"watch": "webpack --watch",
 		"package": "webpack --mode production --devtool hidden-source-map",
 		"lint": "eslint src --ext ts",
-		"test": "jest --coverage && jest-coverage-badges output ./assets/badges"
+		"test": "jest --coverage && jest-coverage-badges && svg2png --input ./coverage/badge-lines.svg --output ./assets/badges/ && svg2png --input ./coverage/badge-branches.svg --output ./assets/badges/"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.4",
@@ -70,6 +70,7 @@
 		"jest": "^27.3.1",
 		"jest-coverage-badges": "^1.1.2",
 		"mocha": "^9.1.1",
+		"svg-png-converter": "^0.0.9",
 		"ts-jest": "^27.0.7",
 		"ts-loader": "^9.2.5",
 		"typescript": "^4.4.4",
