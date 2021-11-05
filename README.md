@@ -2,11 +2,14 @@
 
 ## html2csstree
 
+[![Build Status](./assets/badges/badge-lines.svg)](./assets/badges/badge-lines.svg)
+[![Build Status](./assets/badges/badge-branches.svg)](./assets/badges/badge-branches.svg)
+
 一款 vscode 插件，用于对选中的 html 进行语法解析，将生成的 css class 树复制到剪贴板，省去手动写 css class 的困扰
 
 ## 下载
 
-已经上架：marketplace.visualstudio.com
+已经上架：[marketplace.visualstudio.com](https://marketplace.visualstudio.com/items?itemName=liuxueyong123.html2csstree)
 
 或者在 vscode 扩展中直接搜索 html2csstree 安装即可
 
@@ -45,6 +48,10 @@ windows: `ctrl + 2`
   .child-2 {}
 }
 ```
+
+## License
+
+MIT © Richard McRichface
 
 ## TODO List
 

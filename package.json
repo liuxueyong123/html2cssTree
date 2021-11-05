@@ -1,8 +1,8 @@
 {
 	"name": "html2csstree",
 	"displayName": "html2csstree",
-	"description": "A vscode plug-in for parsing the selected HTML and copying the generated CSS class tree to the clipboard, eliminating the trouble of writing CSS classes manually(一款vscode 插件，用于对选中的html进行语法解析，将生成的css class树复制到剪贴板，省去手动写css class的困扰)",
-	"version": "0.2.0",
+	"description": "Parse the selected HTML and copying the generated CSS class tree to the clipboard, eliminating the trouble of writing CSS classes manually",
+	"version": "0.2.1",
 	"publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
@@ -54,7 +54,7 @@
 		"watch": "webpack --watch",
 		"package": "webpack --mode production --devtool hidden-source-map",
 		"lint": "eslint src --ext ts",
-		"test": "jest --coverage"
+		"test": "jest --coverage && jest-coverage-badges output ./assets/badges"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.1.4",
@@ -68,6 +68,7 @@
 		"eslint": "^7.32.0",
 		"glob": "^7.1.7",
 		"jest": "^27.3.1",
+		"jest-coverage-badges": "^1.1.2",
 		"mocha": "^9.1.1",
 		"ts-jest": "^27.0.7",
 		"ts-loader": "^9.2.5",
