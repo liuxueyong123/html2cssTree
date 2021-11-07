@@ -323,7 +323,7 @@ export const getClassTreeFromAST = (astObj: NodeAST, currentLevel = 1) => {
 
   let result = '';
   if(assertClassExist(astObj)) {
-    result += `.${astObj.attribute.class} {`;
+    result += `.${astObj.attribute.class.split(' ').join('.')} {`;
   }
 
   if(currentLevel === 1 && !assertClassExist(astObj)) {

@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.4] - 2021-11-07
+
+### Fixed
+
+- Fix the problem of multiple classes in the same element
+
 ## [0.2.3] - 2021-11-05
 
 ### Added

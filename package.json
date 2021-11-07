@@ -2,7 +2,7 @@
 	"name": "html2csstree",
 	"displayName": "html2csstree",
 	"description": "Parse the selected HTML and copying the generated CSS class tree to the clipboard, eliminating the trouble of writing CSS classes manually",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"publisher": "liuxueyong123",
 	"author": {
 		"name": "liuxueyong123",
