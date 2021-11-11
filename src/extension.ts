@@ -9,7 +9,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 		allSelections.forEach(async selection => {
 			const text = editor.document.getText(selection);
-			const parseHtml = new ParseHtml(text);
+			const parseHtml = new ParseHtml(`<div>${text}</div>`);
 	
 			try {
 				const astObj = parseHtml.parse();

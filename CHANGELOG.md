@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.5] - 2021-11-11
+
+### Fixed
+
+- Fix the problem of multiple nodes without parent element
+
 ## [0.2.4] - 2021-11-07
 
 ### Fixed

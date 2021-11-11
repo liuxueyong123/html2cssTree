@@ -1,7 +1,20 @@
 import {ParseHtml, getClassTreeFromAST} from '../core';
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(3).toBe(3);
+describe('测试解析是否正常', () => {
+  test('最简单的父子元素', () => {
+    const html = `
+      <div class="parent">
+        <div class="child-1"></div>
+        <div class="child-2"></div>
+      </div>
+    `;
+
+    const parseHtml = new ParseHtml(html);
+    const astObj = parseHtml.parse();
+    const cssTree = getClassTreeFromAST(astObj!);
+
+    expect(cssTree).toBe(`.parent {\r\n\t.child-1 {}\r\n\t.child-2 {}\r\n}`);
+  });
 });
 
 
