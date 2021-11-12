@@ -337,9 +337,15 @@ export const getClassTreeFromAST = (astObj: NodeAST, currentLevel = 1) => {
       astObj.children.splice(i+1, 0, ...astObj.children[i].children);
       continue;
     }
-    haveChildClass = true;
-    result += `\r\n${'\t'.repeat(currentLevel)}`;
+
+    // 解决首行就开始换行的问题
+    if(result) {
+      result += `\r\n`;
+    }
+    result += `${'\t'.repeat(currentLevel)}`;
     result += getClassTreeFromAST(astObj.children[i], currentLevel + 1);
+
+    haveChildClass = true;
   }
 
   if(assertClassExist(astObj)) {
